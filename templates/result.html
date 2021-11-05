@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="centered">
+	<div class="row">
+	                <div class="col-md-10"> 
+	                    <div class="image-container">
+	                        <figure>
+	                          <img src="/static/detected/{{display_image}}" style="width:680px;height: 450px;" >
+                              <p>time : {{display_time}} s</p>
+                              <p>prediction : {{display_result}} </p>
+	                        </figure>
+	                </div>
+	           </div>
+	
+    <div class="row">
+        <div class="col-md-10">
+            <div class="upload-form">
+                <p><b>Change image?</b></p>
+                <form action = "/result/" method = "POST" enctype = "multipart/form-data">
+                    <input type = "file" class="btn btn-primary" name = "file" />
+                    <input type = "submit" class="btn btn-primary" value="Predict" />
+                </form>
+            </div>      
+        </div>
+    </div>
+
+</div>
+{% endblock %}
